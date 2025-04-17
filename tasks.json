@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 2,
+    "Name": "First",
+    "Description": "Desc",
+    "DueDate": "2025-05-12T00:00:00",
+    "Status": 0,
+    "Priority": 0
+  },
+  {
+    "Id": 3,
+    "Name": "Third task",
+    "Description": "Desc 3",
+    "DueDate": "2025-06-10T00:00:00",
+    "Status": 1,
+    "Priority": 2
+  },
+  {
+    "Id": 4,
+    "Name": "Example",
+    "Description": "Desc",
+    "DueDate": "2025-06-12T00:00:00",
+    "Status": 0,
+    "Priority": 0
+  },
+  {
+    "Id": 5,
+    "Name": "New task",
+    "Description": "Desc",
+    "DueDate": "2025-09-12T00:00:00",
+    "Status": 0,
+    "Priority": 0
+  }
+]
