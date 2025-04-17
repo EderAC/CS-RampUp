@@ -14,7 +14,6 @@ do
     Console.WriteLine("3. Update Task Status");
     Console.WriteLine("4. View Tasks By Status");
     Console.WriteLine("5. View Tasks By Priority");
-    // Console.WriteLine("6. View Today's Tasks");
     Console.WriteLine("6. Delete Task");
     Console.WriteLine("7. Exit");
     Console.WriteLine("Choose an option:");
