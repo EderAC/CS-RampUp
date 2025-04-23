@@ -151,9 +151,9 @@ public static class TaskMenuHelper{
             StringHelper.WaitForUser();
             return;
         }
-        Console.WriteLine($"Are you sure you want to delete task #{taskId}? (y/n)");
-        var confirm = Console.ReadLine();
-        if (confirm?.Trim().ToLower() != "y") return;
+        if(StringHelper.ConfirmationDialog($"Are you sure you want to delete task #{taskId}?"))
+            return;
+        
 
         try{
             taskManager.DeleteTask(taskId);

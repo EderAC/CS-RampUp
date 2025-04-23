@@ -6,7 +6,7 @@ namespace TaskManagerApp.Services{
     public class TaskManager : ITaskManager
     {
         private readonly ITaskFileStorage _storage;
-        private List<UserTask> _tasks;
+        private readonly List<UserTask> _tasks;
 
         public TaskManager(ITaskFileStorage storage)
         {
@@ -18,7 +18,7 @@ namespace TaskManagerApp.Services{
         {
             try
             {
-                task.Id = _tasks.Any() ? _tasks.Max(task => task.Id) + 1 : 1;
+                task.Id = _tasks.Count != 0 ? _tasks.Max(task => task.Id) + 1 : 1;
                 _tasks.Add(task);
                 _storage.SaveTasksToFile(_tasks);
             }

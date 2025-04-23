@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ramp-up")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f70b0ae7a9380e7f7e0940c784cf9182ae8381f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ramp-up")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ramp-up")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

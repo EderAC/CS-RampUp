@@ -6,6 +6,12 @@ namespace TaskManagerApp.Utils
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey(true);
         }
+
+        public static bool ConfirmationDialog(string text){
+            Console.WriteLine($"{text} (y/n)");
+            var confirm = Console.ReadLine();
+            return confirm?.Trim().ToLower() != "y";
+        }
         
         public static string GetString(string message, string defaultValue)
         {

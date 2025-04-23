@@ -22,7 +22,12 @@ do
     switch (option)
     {
         case "1":
-            TaskMenuHelper.MenuAddTask(taskManager);
+            while(true){
+                TaskMenuHelper.MenuAddTask(taskManager);
+                if(StringHelper.ConfirmationDialog("Do you want to add another task?"))
+                    break;
+                    Console.Clear();
+            }
             break;
 
         case "2":
@@ -53,5 +58,5 @@ do
             Console.WriteLine("Wrong option selected, please try again");
             break;
     }
-} while (option != "8");
+} while (option != "7");
 
