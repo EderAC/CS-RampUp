@@ -36,7 +36,7 @@
     "Name": "Test new way 1",
     "Description": "new Desc",
     "DueDate": "2025-05-12T00:00:00",
-    "Status": 0,
+    "Status": 1,
     "Priority": 2
   },
   {

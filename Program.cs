@@ -14,8 +14,9 @@ do
     Console.WriteLine("3. Update Task Status");
     Console.WriteLine("4. View Tasks By Status");
     Console.WriteLine("5. View Tasks By Priority");
-    Console.WriteLine("6. Delete Task");
-    Console.WriteLine("7. Exit");
+    Console.WriteLine("6. View Next Tasks");
+    Console.WriteLine("7. Delete Task");
+    Console.WriteLine("8. Exit");
     Console.WriteLine("Choose an option:");
     option = Console.ReadLine();
 
@@ -24,7 +25,7 @@ do
         case "1":
             while(true){
                 TaskMenuHelper.MenuAddTask(taskManager);
-                if(StringHelper.ConfirmationDialog("Do you want to add another task?"))
+                if(!StringHelper.ConfirmationDialog("Do you want to add another task?"))
                     break;
                     Console.Clear();
             }
@@ -47,10 +48,14 @@ do
             break;
 
         case "6":
-            TaskMenuHelper.MenuDeleteTask(taskManager);
+            TaskMenuHelper.MenuGetNextTasks(taskManager);
             break;
 
         case "7":
+            TaskMenuHelper.MenuDeleteTask(taskManager);
+            break;
+
+        case "8":
             Console.WriteLine("Exiting the program...");
             break;
 
@@ -58,5 +63,5 @@ do
             Console.WriteLine("Wrong option selected, please try again");
             break;
     }
-} while (option != "7");
+} while (option != "8");
 

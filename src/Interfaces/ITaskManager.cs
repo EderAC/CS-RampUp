@@ -10,6 +10,6 @@ namespace TaskManagerApp.Interfaces
         List<UserTask> GetAllTasks();
         List<UserTask> GetTasksByStatus(Models.TaskStatus status);
         List<UserTask> GetTasksByPriority(TaskPriority priority);
-        List<UserTask> GetTodayTasks();
+        List<UserTask> GetNextTasks();
     }
 }

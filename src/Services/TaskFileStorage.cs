@@ -14,15 +14,17 @@ namespace TaskManagerApp.Services{
         {
             return JsonSerializer.Serialize(value, options);
         }
-        private readonly string filePath = "tasks.json";
+        private readonly string filePath;
 
-        public TaskFileStorage()
+        public TaskFileStorage(string filePath = "tasks.json")
         {
+            this.filePath = filePath;
             if (!File.Exists(filePath))
             {
                 File.Create(filePath).Close();
             }
         }
+
         public void SaveTasksToFile(List<UserTask> tasks)
         {
             string jsonString = Serialize(tasks);

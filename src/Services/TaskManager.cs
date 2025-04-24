@@ -7,6 +7,7 @@ namespace TaskManagerApp.Services{
     {
         private readonly ITaskFileStorage _storage;
         private readonly List<UserTask> _tasks;
+        private const int DefaultTaskId = 1;
 
         public TaskManager(ITaskFileStorage storage)
         {
@@ -18,14 +19,17 @@ namespace TaskManagerApp.Services{
         {
             try
             {
-                task.Id = _tasks.Count != 0 ? _tasks.Max(task => task.Id) + 1 : 1;
+                task.Id = _tasks.Count != 0 ? _tasks.Max(task => task.Id) + 1 : DefaultTaskId;
                 _tasks.Add(task);
                 _storage.SaveTasksToFile(_tasks);
+            }
+            catch (IOException ioEx)
+            {
+                throw new Exception($"File operation failed: {ioEx.Message}");
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-
             }
         }
 
@@ -36,6 +40,10 @@ namespace TaskManagerApp.Services{
                 _tasks.Remove(task);
                 _storage.SaveTasksToFile(_tasks);
                 return true;
+            }
+            catch (IOException ioEx)
+            {
+                throw new Exception($"File operation failed: {ioEx.Message}");
             }
             catch (Exception ex)
             {
@@ -52,10 +60,14 @@ namespace TaskManagerApp.Services{
                 _storage.SaveTasksToFile(_tasks);
                 return true;
                 
-            }catch (Exception ex)
+            }
+            catch (IOException ioEx)
+            {
+                throw new Exception($"File operation failed: {ioEx.Message}");
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-
             }
         }
 
@@ -70,9 +82,18 @@ namespace TaskManagerApp.Services{
         {
             return [.. _tasks.Where(t => t.Priority == priority)];
         }
-        public List<UserTask> GetTodayTasks()
+        public List<UserTask> GetNextTasks()
         {
-            return [.. _tasks.Where(t => t.DueDate.Date == DateTime.Today)];
+            var nextTasks = _tasks
+                .Where(t => t.Status == Models.TaskStatus.ToDo && t.DueDate > DateTime.Now)
+                .OrderBy(t => t.DueDate)
+                .ToList();
+            if(nextTasks.Count == 0)
+            {
+                throw new Exception("No tasks found");
+            }
+
+            return nextTasks;
         }
 
     }
