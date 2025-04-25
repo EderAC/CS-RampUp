@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <Using Include="Xunit" />
-    <ProjectReference Include="..\ramp-up\ramp-up.csproj" />
+    <ProjectReference Include="..\TaskManagerApp\ramp-up.csproj" />
   </ItemGroup>
 
 </Project>
