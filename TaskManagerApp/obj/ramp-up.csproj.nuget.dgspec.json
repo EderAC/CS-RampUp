@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/eder-chiquito/Desktop/projects/ramp-up/ramp-up.csproj": {}
+    "/home/eder-chiquito/Desktop/projects/CS-RampUp/TaskManagerApp/ramp-up.csproj": {}
   },
   "projects": {
-    "/home/eder-chiquito/Desktop/projects/ramp-up/ramp-up.csproj": {
+    "/home/eder-chiquito/Desktop/projects/CS-RampUp/TaskManagerApp/ramp-up.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/eder-chiquito/Desktop/projects/ramp-up/ramp-up.csproj",
+        "projectUniqueName": "/home/eder-chiquito/Desktop/projects/CS-RampUp/TaskManagerApp/ramp-up.csproj",
         "projectName": "ramp-up",
-        "projectPath": "/home/eder-chiquito/Desktop/projects/ramp-up/ramp-up.csproj",
+        "projectPath": "/home/eder-chiquito/Desktop/projects/CS-RampUp/TaskManagerApp/ramp-up.csproj",
         "packagesPath": "/home/eder-chiquito/.nuget/packages/",
-        "outputPath": "/home/eder-chiquito/Desktop/projects/ramp-up/obj/",
+        "outputPath": "/home/eder-chiquito/Desktop/projects/CS-RampUp/TaskManagerApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/eder-chiquito/.nuget/NuGet/NuGet.Config"
